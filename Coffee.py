@@ -21,36 +21,38 @@ class Coffee_type:
 
   def __str__(self):
     return self.name
+  
 
 decaf_coffe = Coffee_type("decaf", 100)
 normal_cofee = Coffee_type("normal", 200)
-print(decaf_coffe, decaf_coffe.price)
-print(normal_cofee, normal_cofee.price)
 
-""""
+decaf_coffee_name = decaf_coffe.name
+normal_cofee_name = normal_cofee.name
+
+price_decaff_coffee = decaf_coffe.price
+price_normal_cofee = normal_cofee.price
+
+
+
 def grind():
   beans = input("Do you wanna decaf £2 or normal £3?: ")
-  beans = beans.lower()
+  beans = beans.lower() # making sure it is lower case not sure now
 
-  price_decaf = 100
-  price_normal = 200
-
-
-
-  if beans == "decaf": ##
-    global price
-    price += price_decaf
+  base_coffee_price = 100
+  
+  if beans == decaf_coffee_name: ##
+    base_coffee_price += price_decaff_coffee
     print("Grinding decaf beans...")
     time.sleep(grinding_time_S) 
-  elif beans == "normal":
-    price += price_normal
+  elif beans == normal_cofee_name:
+    base_coffee_price += price_normal_cofee
     print("Grinding normal beans...")
     time.sleep(grinding_time_S) 
   else:
     print("Add some beans!")
 
 def boildWater():
-  water = input("Is it cattle ready on the stove full of water? Y/N: ")
+  water = input("Is it cattle ready on the stove and full of water? Y/N: ")
   water = water.lower()
 
   
@@ -114,4 +116,4 @@ while True:
 ## add class
 ## write tp file
 
-"""
+#"""

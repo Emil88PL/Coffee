@@ -14,6 +14,20 @@ add_milk_S = 1
 
 price = 100 ## shoudnt be global
 
+class Coffee_type:
+  def __init__(self, name, price):
+    self.name = name
+    self.price = price
+
+  def __str__(self):
+    return self.name
+
+decaf_coffe = Coffee_type("decaf", 100)
+normal_cofee = Coffee_type("normal", 200)
+print(decaf_coffe, decaf_coffe.price)
+print(normal_cofee, normal_cofee.price)
+
+""""
 def grind():
   beans = input("Do you wanna decaf £2 or normal £3?: ")
   beans = beans.lower()
@@ -99,3 +113,5 @@ while True:
 ## private _let
 ## add class
 ## write tp file
+
+"""

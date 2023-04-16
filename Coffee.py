@@ -12,18 +12,24 @@ boiling_time_S = 3
 pour_time_S = 2 
 add_milk_S = 1
 
-price = 100
+price = 100 ## shoudnt be global
 
 def grind():
   beans = input("Do you wanna decaf £2 or normal £3?: ")
   beans = beans.lower()
-  if beans == "decaf":
+
+  price_decaf = 100
+  price_normal = 200
+
+
+
+  if beans == "decaf": ##
     global price
-    price += 100 #
+    price += price_decaf
     print("Grinding decaf beans...")
     time.sleep(grinding_time_S) 
   elif beans == "normal":
-    price += 200 #
+    price += price_normal
     print("Grinding normal beans...")
     time.sleep(grinding_time_S) 
   else:
@@ -32,7 +38,10 @@ def grind():
 def boildWater():
   water = input("Is it cattle ready on the stove full of water? Y/N: ")
   water = water.lower()
-  while water != "y": #
+
+  
+
+  while water != "y": ##
     print("Add water!") 
     water = input("How about now? Y/N: ")
     water = water.lower()
@@ -43,13 +52,17 @@ def boildWater():
 def addMilk():
   milk = input("Do you want to add some milk? it is only 20p!: ")
   milk = milk.lower()
-  while milk != "y": #
+
+  price_milk = 20 
+  pozitive_answer = "y"
+
+  while milk != pozitive_answer: 
     print("OK no milk")
     break
   else:
     print("Adding milk...")
     global price
-    price += 20 #
+    price += price_milk
     time.sleep(add_milk_S)
 
 def pourWaterOverGrounds():
